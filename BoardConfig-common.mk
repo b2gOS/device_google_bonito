@@ -39,6 +39,11 @@ TARGET_BOARD_COMMON_PATH := device/google/bonito/sdm710
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ENG_DEBUG_TAGS := true
 
+BUILD_BROKEN_PHONY_TARGETS := true
+ALLOW_MISSING_DEPENDENCIES := true
+
+export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
+
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200n8 androidboot.console=ttyMSM0 printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3
@@ -49,6 +54,7 @@ BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7c4000.sdhci
+#BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
