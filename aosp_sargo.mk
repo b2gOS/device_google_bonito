@@ -26,11 +26,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Ring_Synth_04.ogg \
     ro.com.android.dataroaming=true \
 
-PRODUCT_PACKAGES += \
-    PhotoTable \
-    WallpaperPicker \
-    WAPPushManager \
-
 # STOPSHIP deal with Qualcomm stuff later
 # PRODUCT_RESTRICT_VENDOR_FILES := all
 
@@ -42,4 +37,5 @@ PRODUCT_MODEL := AOSP on sargo
 
 PRODUCT_COPY_FILES += \
     device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
-    $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/volume.cfg:/system/etc/volume.cfg
